@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="nav-container">
         <div className="logo">
-          <img src="/logo_2.png" alt="Aleph Tav Fusions" className="logo-img" />
+          <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logo_2.png`} alt="Aleph Tav Fusions" className="logo-img" />
           <div className="logo-text">
             <span className="logo-name">ALEPH TAV</span>
             <span className="logo-sub">FUSIONS</span>
