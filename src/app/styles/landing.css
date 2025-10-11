@@ -1,0 +1,105 @@
+.hero {
+  position: relative;
+  width: 100%;        /* ✅ Use % instead of vw */
+  height: 100vh;
+  overflow: hidden;   /* ✅ Contain internal pseudo-elements */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(at 30% 30%, #1E6091 0%, transparent 60%),
+              radial-gradient(at 70% 70%, #DAA520 0%, transparent 60%);
+  opacity: 0.25;
+  /* animation: floatGradient 12s ease-in-out infinite alternate; */
+  z-index: 0;
+}
+
+@keyframes floatGradient {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-5%, -5%);
+  }
+}
+
+.hero h1,
+.hero p,
+.cta-btn {
+  position: relative;
+  z-index: 1;
+}
+
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  color: var(--color-muted);
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 112, 243, 0.3);
+}
+
+.about {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  color: var(--color-muted);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  border-top: 1px solid #eee;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

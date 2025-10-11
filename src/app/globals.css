@@ -1,42 +1,82 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-main: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --color-bg: #ffffff;
+  --color-text: #111111;
+
+  /* Accent palette */
+  --color-accent: #1E6091;   /* Deep blue */
+  --color-accent-2: #DAA520; /* Gold secondary */
+
+  --color-muted: #666666;
+
+  --section-padding: 6rem 2rem;
+  --max-width: 1200px;
+  --transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* 🧩 Prevents horizontal scroll */
 }
 
-html,
+a {
+  text-decoration: none;
+  color: var(--color-accent);
+  transition: var(--transition);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+section {
+  width: 100%;
+  padding: var(--section-padding);
+}
+
+h2 span {
+  color: var(--color-accent-2);
+}
+
+.cta-btn {
+  background: var(--color-accent);
+}
+.cta-btn:hover {
+  background: var(--color-accent-2);
+  box-shadow: 0 8px 20px rgba(218, 165, 32, 0.3);
+}
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+p, a, li {
+  font-weight: 400;
+  line-height: 1.7;
+}
+
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(circle at 20% 20%, #ffffff 0%, #f8f9fa 40%, #eef2f5 100%);
+  background-attachment: fixed;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  max-width: 100%;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
