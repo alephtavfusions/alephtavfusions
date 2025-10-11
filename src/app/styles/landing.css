@@ -103,3 +103,14 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+nav {
+  font-family: var(--font-main);
+}
+
+@media (max-width: 768px) {
+  .menu-open {
+    max-height: 300px;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,134 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+  z-index: 50;
+  font-family: var(--font-main);
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 0.6rem;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+}
+
+.logoText {
+  line-height: 1;
+}
+
+.logoMain {
+  display: block;
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 1.1rem;
+}
+
+.logoSub {
+  display: block;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: var(--color-accent-2);
+  font-size: 0.85rem;
+}
+
+/* NAV LINKS */
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: var(--color-accent-2);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(6px);
+}
+.active span:nth-child(2) {
+  opacity: 0;
+}
+.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-6px);
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+  .links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .open {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

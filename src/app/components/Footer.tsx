@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="footer fade-in">
       <div className="footer-container">
         <div className="footer-logo">
-          <img src="/logo.png" alt="Aleph Tav Fusions Logo" className="footer-img" />
+          <img src="https://github.com/alephtavfusions/alephtavfusions/blob/main/public/logo.png?raw=true" alt="Aleph Tav Fusions Logo" className="footer-img" />
           <span className="footer-name">Aleph Tav Fusions</span>
         </div>
 
