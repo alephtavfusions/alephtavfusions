@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link"; // ✅ Import Next.js Link
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -15,8 +16,8 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
-        {/* Left: Logo */}
-        <div className="logo">
+        {/* ✅ Left: Logo (clickable link to home) */}
+        <Link href="/" className="logo">
           <img
             src="https://github.com/alephtavfusions/alephtavfusions/blob/main/public/logo_2.png?raw=true"
             alt="Aleph Tav Fusions"
@@ -26,14 +27,22 @@ export default function Navbar() {
             <span className="logo-name">ALEPH TAV</span>
             <span className="logo-sub">FUSIONS</span>
           </div>
-        </div>
+        </Link>
 
         {/* Center: Links */}
         <div className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <a href="#who-we-are" onClick={() => setMenuOpen(false)}>Who We Are</a>
-          <a href="#what-we-do" onClick={() => setMenuOpen(false)}>What We Do</a>
-          <a href="#join-us" onClick={() => setMenuOpen(false)}>How to Be a Part</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+          <a href="#who-we-are" onClick={() => setMenuOpen(false)}>
+            Who We Are
+          </a>
+          <a href="#what-we-do" onClick={() => setMenuOpen(false)}>
+            What We Do
+          </a>
+          <a href="#join-us" onClick={() => setMenuOpen(false)}>
+            How to Be a Part
+          </a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>
+            Contact
+          </a>
         </div>
 
         {/* Right: Hamburger */}
