@@ -9,7 +9,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "AlephTav Fusions",
+  title: "Aleph Tav Fusions",
   description: "We help you build intelligent, elegant digital solutions.",
 };
 
