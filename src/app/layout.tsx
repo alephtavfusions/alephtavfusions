@@ -9,8 +9,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Your Firm Name",
-  description: "Business Technology Consulting & Products",
+  title: "AlephTav Fusions",
+  description: "We help you build intelligent, elegant digital solutions.",
 };
 
 export default function RootLayout({
