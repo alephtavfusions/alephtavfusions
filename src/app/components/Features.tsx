@@ -1,12 +1,13 @@
-"use client";
+﻿"use client";
 
 import "./Features.css";
+import Link from "next/link";
 
 export default function Features() {
   const items = [
     {
       title: "Business Technology Consulting",
-      desc: "We help organizations align technology with their business goals — from digital transformation to cloud strategy.",
+      desc: "We help organizations align technology with their business goals â€” from digital transformation to cloud strategy.",
     },
     {
       title: "Custom Software & Product Development",
@@ -14,11 +15,11 @@ export default function Features() {
     },
     {
       title: "Our In-House Products",
-      desc: "We develop intelligent SaaS tools that solve real business problems — crafted from our consulting experience.",
+      desc: "We develop intelligent SaaS tools that solve real business problems â€” crafted from our consulting experience.",
     },
     {
       title: "Web Design, Marketing & Brand Development",
-      desc: "We craft modern websites, brand identities, and marketing strategies — covering UI/UX, SEO, content, and go-to-market.",
+      desc: "We craft modern websites, brand identities, and marketing strategies â€” covering UI/UX, SEO, content, and go-to-market.",
     },
   ];
 
@@ -26,12 +27,25 @@ export default function Features() {
     <section className="features fade-in" id="what-we-do">
       <h2>What We Do</h2>
       <div className="feature-grid">
-        {items.map((item, i) => (
-          <div key={i} className="feature-card">
-            <h3>{item.title}</h3>
-            <p>{item.desc}</p>
-          </div>
-        ))}
+        {items.map((item, i) => {
+          const content = (
+            <>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </>
+          );
+
+          const isWebDesign = item.title === "Web Design, Marketing & Brand Development";
+          return isWebDesign ? (
+            <Link key={i} href="/services/web-design/" className="feature-card">
+              {content}
+            </Link>
+          ) : (
+            <div key={i} className="feature-card">
+              {content}
+            </div>
+          );
+        })}
       </div>
     </section>
   );
