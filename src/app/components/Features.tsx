@@ -16,6 +16,10 @@ export default function Features() {
       title: "Our In-House Products",
       desc: "We develop intelligent SaaS tools that solve real business problems — crafted from our consulting experience.",
     },
+    {
+      title: "Web Design, Marketing & Brand Development",
+      desc: "We craft modern websites, brand identities, and marketing strategies — covering UI/UX, SEO, content, and go-to-market.",
+    },
   ];
 
   return (
